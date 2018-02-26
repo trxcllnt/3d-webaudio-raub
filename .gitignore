@@ -1,0 +1,9 @@
+.idea
+.cproject
+.project
+.lock-wscript
+.DS_Store
+Debug
+package-lock.json
+node_modules
+*.log
