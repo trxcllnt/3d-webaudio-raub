@@ -1,5 +1,8 @@
 'use strict';
 
+const webaudio = require('web-audio-api');
+const Speaker  = require('speaker');
+
 
 module.exports = core => {
 	
@@ -7,8 +10,19 @@ module.exports = core => {
 		return;
 	}
 	
-	core.webaudio = {};
+	core.webaudio = webaudio;
 	
-	require('./js')(core);
+	window.AudioContext = webaudio.AudioContext;
+	
+	
+	const context = new webaudio.AudioContext();
+	
+	context.outStream = new Speaker({
+		channels   : context.format.numberOfChannels,
+		bitDepth   : context.format.bitDepth,
+		sampleRate : context.sampleRate,
+	})
+	
+	core.three.AudioContext.setContext(context);
 	
 };

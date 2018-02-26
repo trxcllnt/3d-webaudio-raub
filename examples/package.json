@@ -1,0 +1,35 @@
+{
+  "name": "EXAMPLES",
+  "author": "Luis Blanco <raubtierxxx@gmail.com>",
+  "description": "EXAMPLES",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "cd .. && npm i"
+  },
+  "keywords": [
+    "3d",
+    "web-audio",
+    "webaudio",
+    "sound",
+    "audio",
+    "node",
+    "plugin"
+  ],
+  "maintainers": [
+    {
+      "name": "Luis Blanco",
+      "email": "raubtierxxx@gmail.com",
+      "skype": "rauber666"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raub/node-3d-webaudio.git"
+  },
+  "dependencies": {
+    "3d-webaudio-raub": "file:../",
+    "3d-core-raub": "0.0.6"
+  }
+}
