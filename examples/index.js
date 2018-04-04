@@ -1,6 +1,7 @@
 'use strict';
 
 const core3d = require('3d-core-raub');
+setInterval(()=>{}, 100)
 const webaudio = require('3d-webaudio-raub');
 
 webaudio(core3d);
@@ -59,7 +60,7 @@ function init() {
 	ballGeometry.translate( 0, 0.3, 0 );
 	var ballMaterial = new THREE.MeshLambertMaterial( { color: 0xcccccc } );
 	// create objects when audio buffer is loaded
-	audioLoader.load( 'sounds/ping_pong.mp3', function ( buffer ) {
+	audioLoader.load( `${__dirname}/sounds/trainrolling.wav`, function ( buffer ) {
 		for ( var i = 0; i < count; i ++ ) {
 			var s = i / count * Math.PI * 2;
 			var ball = new THREE.Mesh( ballGeometry, ballMaterial );
@@ -73,9 +74,9 @@ function init() {
 			scene.add( ball );
 			objects.push( ball );
 		}
-		animate();
 	} );
-	//
+	
+	
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.shadowMap.enabled = true;
 	renderer.setSize( window.innerWidth, window.innerHeight );
@@ -87,6 +88,7 @@ function init() {
 	// controls.minDistance = 1;
 	// controls.maxDistance = 25;
 	//
+	animate();
 	window.addEventListener( 'resize', onWindowResize, false );
 }
 function onWindowResize( event ) {
@@ -103,7 +105,7 @@ var height = 3;
 var offset = 0.5;
 var time = 0;
 function render() {
-	time += 0.02;
+	time += 0.0002;
 	for ( var i = 0; i < objects.length; i ++ ) {
 		var ball = objects[ i ];
 		var previousHeight = ball.position.y;
