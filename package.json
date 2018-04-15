@@ -19,6 +19,6 @@
     "url": "https://github.com/raub/node-3d-webaudio.git"
   },
   "dependencies": {
-    "waa-raub": "0.0.1"
+    "waa-raub": "0.0.5"
   }
 }

@@ -12,5 +12,6 @@ module.exports = core => {
 	core.webaudio = webaudio;
 	
 	window.AudioContext = webaudio.AudioContext;
+	global.AudioContext = webaudio.AudioContext;
 	
 };
