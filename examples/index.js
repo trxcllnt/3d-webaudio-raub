@@ -104,25 +104,32 @@ const { three, window, requestAnimationFrame } = core3d;
 		renderer.setSize( window.innerWidth, window.innerHeight );
 	});
 	
-	const speed = 0.001;
+	const speed = 0.000001;
 	const height = 3;
 	const offset = 0.5;
 	
 	const render = () => {
-		const time = Date.now();
+		const time = Date.now() % 3600;
 		for ( let i = 0; i < objects.length; i++ ) {
 			const ball = objects[ i ];
 			const previousHeight = ball.position.y;
-			ball.position.y = Math.abs( Math.sin( i * offset + ( time * speed ) ) * height );
+			const al = i * offset + ( time * speed );
+			
+			ball.position.y = Math.abs( Math.sin( al ) * height );
+			
 			if ( ball.position.y < previousHeight ) {
+				// console.log('index.js', i, 'FLY', ball.position.y);
 				ball.userData.down = true;
 			} else {
 				if ( ball.userData.down === true ) {
 					// ball changed direction from down to up
 					const audio = ball.children[ 0 ];
 					// play audio with perfect timing when ball hits the surface
+					console.log('index.js', 'PLAY', i, al, previousHeight, ball.position.y);
 					audio.play();
 					ball.userData.down = false;
+				} else {
+					// console.log('index.js', i, 'FLY', ball.position.y);
 				}
 			}
 		}
