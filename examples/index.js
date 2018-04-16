@@ -104,13 +104,12 @@ const { three, window, requestAnimationFrame } = core3d;
 		renderer.setSize( window.innerWidth, window.innerHeight );
 	});
 	
-	const speed = 1.7;
+	const speed = 0.001;
 	const height = 3;
 	const offset = 0.5;
-	let time = 0;
 	
 	const render = () => {
-		time += 0.0002;
+		const time = Date.now();
 		for ( let i = 0; i < objects.length; i++ ) {
 			const ball = objects[ i ];
 			const previousHeight = ball.position.y;
