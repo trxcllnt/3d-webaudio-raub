@@ -61,7 +61,7 @@ const { three, window, requestAnimationFrame } = core3d;
 	
 	// Objects
 	
-	const count = 5;
+	const count = 1;
 	const radius = 3;
 	const ballGeometry = new three.SphereBufferGeometry( 0.3, 32, 16 );
 	ballGeometry.translate( 0, 0.3, 0 );
@@ -104,12 +104,12 @@ const { three, window, requestAnimationFrame } = core3d;
 		renderer.setSize( window.innerWidth, window.innerHeight );
 	});
 	
-	const speed = 0.000001;
+	const speed = 0.005;
 	const height = 3;
 	const offset = 0.5;
 	
 	const render = () => {
-		const time = Date.now() % 3600;
+		const time = Date.now();
 		for ( let i = 0; i < objects.length; i++ ) {
 			const ball = objects[ i ];
 			const previousHeight = ball.position.y;
@@ -117,7 +117,7 @@ const { three, window, requestAnimationFrame } = core3d;
 			
 			ball.position.y = Math.abs( Math.sin( al ) * height );
 			
-			if ( ball.position.y < previousHeight ) {
+			if ( ball.position.y <= previousHeight ) {
 				// console.log('index.js', i, 'FLY', ball.position.y);
 				ball.userData.down = true;
 			} else {
@@ -125,8 +125,10 @@ const { three, window, requestAnimationFrame } = core3d;
 					// ball changed direction from down to up
 					const audio = ball.children[ 0 ];
 					// play audio with perfect timing when ball hits the surface
-					console.log('index.js', 'PLAY', i, al, previousHeight, ball.position.y);
+					console.log('index.js', i, 'Play');
 					audio.play();
+					const startAt = Date.now();
+					audio.source.onended = () => console.log('ENDED', i, Date.now() - startAt);
 					ball.userData.down = false;
 				} else {
 					// console.log('index.js', i, 'FLY', ball.position.y);
