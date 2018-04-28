@@ -1,24 +1,26 @@
 {
-  "name": "3d-webaudio-raub",
-  "version": "0.0.1",
-  "description": "WebAudio plugin for Node.js 3D Core",
-  "main": "index.js",
-  "keywords": [
-    "3d",
-    "web-audio",
-    "webaudio",
-    "sound",
-    "audio",
-    "node",
-    "plugin"
-  ],
-  "author": "Luis Blanco <raubtierxxx@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/raub/node-3d-webaudio.git"
-  },
-  "dependencies": {
-    "waa-raub": "https://github.com/raub/node-waa.git"
-  }
+	"author": "Luis Blanco <luisblanco1337@gmail.com>",
+	"name": "3d-webaudio-raub",
+	"version": "0.0.2",
+	"description": "WebAudio plugin for Node.js 3D Core",
+	"license": "MIT",
+	"main": "index.js",
+	"keywords": [
+		"plugin",
+		"3d",
+		"node3d",
+		"webaudio",
+		"sound"
+	],
+	"engines": {
+		"node": ">=8.11.1",
+		"npm": ">=5.6.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/node-3d/3d-webaudio-raub.git"
+	},
+	"dependencies": {
+		"waa-raub": "0.0.7"
+	}
 }
