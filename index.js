@@ -1,6 +1,6 @@
 'use strict';
 
-const webaudio = require('waa-raub');
+const webaudio = require('webaudio-raub');
 
 
 module.exports = core => {
@@ -11,7 +11,7 @@ module.exports = core => {
 	
 	core.webaudio = webaudio;
 	
-	window.AudioContext = webaudio.AudioContext;
+	core.window.AudioContext = webaudio.AudioContext;
 	global.AudioContext = webaudio.AudioContext;
 	
 };
