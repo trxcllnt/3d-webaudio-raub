@@ -1,5 +1,9 @@
 'use strict';
 
+var SegfaultHandler = require('segfault-handler');
+ 
+SegfaultHandler.registerHandler('crash.log');
+
 const core3d = require('3d-core-raub');
 const webaudio = require('3d-webaudio-raub');
 
@@ -81,6 +85,7 @@ const { three, window, requestAnimationFrame } = core3d;
 		ball.position.z = radius * Math.sin( s );
 		const audio = new three.PositionalAudio( listener );
 		audio.setBuffer( buffer );
+		audio._buf = buffer;
 		ball.add( audio );
 		scene.add( ball );
 		objects.push( ball );
