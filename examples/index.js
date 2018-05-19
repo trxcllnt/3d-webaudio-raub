@@ -109,7 +109,7 @@ const { three, window, requestAnimationFrame } = core3d;
 		renderer.setSize( window.innerWidth, window.innerHeight );
 	});
 	
-	const speed = 0.002;
+	const speed = 0.001;
 	const height = 3;
 	const offset = 0.5;
 	

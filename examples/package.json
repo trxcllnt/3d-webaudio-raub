@@ -7,7 +7,7 @@
 		"preinstall": "cd .. && npm i"
 	},
 	"dependencies": {
-		"3d-core-raub": "0.0.12",
+		"3d-core-raub": "0.0.13",
 		"3d-webaudio-raub": "file:../",
 		"segfault-handler": "^1.0.0"
 	}
