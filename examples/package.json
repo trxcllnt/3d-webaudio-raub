@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"dependencies": {
 		"3d-core-raub": "2.0.0",
-		"3d-webaudio-raub": "https://github.com/node-3d/3d-webaudio-raub.git",
+		"3d-webaudio-raub": "1.0.0",
 		"segfault-handler": "^1.0.0"
 	}
 }
